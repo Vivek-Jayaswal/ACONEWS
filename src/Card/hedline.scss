@@ -1,0 +1,63 @@
+@import "../App.scss";
+
+
+.headline-container {
+    width: 100%;
+    @include rowItem(space-around,null, 20px);
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+.headline-card {
+    padding: 10px;
+    width: 45%;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 0px 0px 16px rgb(210, 209, 209);
+    @include rowItem(null,flex-start, 10px);
+    .headline {
+        width: 70%;
+        @include rowItem("",flex-start, 10px);
+        flex-direction: column;
+        padding: 0px 20px;
+    }
+
+    img {
+        width:30%;
+        height: 150px;
+        border-radius: 10px;
+    }
+}
+
+.headline-link{
+    a{
+        text-decoration: none;
+        color: rgb(124, 124, 124);
+        &:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .headline-container{
+        @include rowItem(space-between,center, 20px);
+        flex-direction: column;
+    }
+    .headline-card{
+        width: 90%;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .headline-container{
+        @include rowItem(space-between,center, 20px);
+        flex-direction: column;
+    }
+    .headline-card{
+        width: 80%;
+    }
+}
